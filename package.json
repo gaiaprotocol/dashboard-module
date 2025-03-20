@@ -1,0 +1,11 @@
+{
+  "name": "@gaiaprotocol/dashboard",
+  "author": "Gaia Protocol",
+  "homepage": "https://gaiaprotocol.com",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
+  "dependencies": {},
+  "devDependencies": {}
+}
