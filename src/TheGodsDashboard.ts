@@ -1,22 +1,40 @@
 import { DomNode, el } from "@common-module/app";
-import { AppCompConfig } from "@common-module/app-components";
+import { AppCompConfig, Tab, TabGroup } from "@common-module/app-components";
 import TheGodsGraph from "./TheGodsGraph.js";
 
 export default class TheGodsDashboard extends DomNode {
   private statsContent: DomNode;
+  private graphTabGroup: TabGroup<"numOwners" | "floorPrice">;
+  private graph: TheGodsGraph;
 
   constructor() {
     super(".the-gods-dashboard");
+
     this.append(
       el(
         "section.stats",
         el("h2", "Global Stats"),
         this.statsContent = el(".content"),
       ),
-      el("section", new TheGodsGraph("30d", "numOwners")),
+      el(
+        "section.graph",
+        this.graphTabGroup = new TabGroup<"numOwners" | "floorPrice">(
+          new Tab({ label: "Holders", value: "numOwners" }),
+          new Tab({ label: "Floor Price", value: "floorPrice" }),
+        ),
+        this.graph = new TheGodsGraph("numOwners"),
+      ),
       el("section", el("h2", "Top God collectors")),
     );
+
+    this.graphTabGroup.on(
+      "tabSelected",
+      (value) => this.graph.metric = value,
+    );
+
     this.fetchCollectionStats();
+
+    this.on("visible", () => this.graphTabGroup.init());
   }
 
   private async fetchCollectionStats() {

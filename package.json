@@ -7,7 +7,9 @@
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
   "dependencies": {
-    "@common-module/app-components": "^0.1.8"
+    "@common-module/app-components": "^0.1.6",
+    "@common-module/supabase": "^0.1.7",
+    "lightweight-charts": "^5.0.4"
   },
   "devDependencies": {}
 }

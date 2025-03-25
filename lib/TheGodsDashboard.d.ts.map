@@ -1,1 +1,1 @@
-{"version":3,"file":"TheGodsDashboard.d.ts","sourceRoot":"","sources":["../src/TheGodsDashboard.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAM,MAAM,oBAAoB,CAAC;AAIjD,MAAM,CAAC,OAAO,OAAO,gBAAiB,SAAQ,OAAO;IACnD,OAAO,CAAC,YAAY,CAAU;;YAgBhB,oBAAoB;CAgCnC"}
+{"version":3,"file":"TheGodsDashboard.d.ts","sourceRoot":"","sources":["../src/TheGodsDashboard.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAM,MAAM,oBAAoB,CAAC;AAIjD,MAAM,CAAC,OAAO,OAAO,gBAAiB,SAAQ,OAAO;IACnD,OAAO,CAAC,YAAY,CAAU;IAC9B,OAAO,CAAC,aAAa,CAAuC;IAC5D,OAAO,CAAC,KAAK,CAAe;;YAgCd,oBAAoB;CAgCnC"}
