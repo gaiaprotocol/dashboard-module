@@ -1,11 +1,18 @@
 import { DomNode, el } from "@common-module/app";
+import { AppCompConfig } from "@common-module/app-components";
 import TheGodsGraph from "./TheGodsGraph.js";
 
 export default class TheGodsDashboard extends DomNode {
+  private statsContent: DomNode;
+
   constructor() {
     super(".the-gods-dashboard");
     this.append(
-      el("section", el("h2", "Global Stats")),
+      el(
+        "section.stats",
+        el("h2", "Global Stats"),
+        this.statsContent = el(".content"),
+      ),
       el("section", new TheGodsGraph("30d", "numOwners")),
       el("section", el("h2", "Top God collectors")),
     );
@@ -13,6 +20,8 @@ export default class TheGodsDashboard extends DomNode {
   }
 
   private async fetchCollectionStats() {
+    this.statsContent.append(new AppCompConfig.LoadingSpinner());
+
     const response = await fetch(
       "https://dhzxulywizygtdficytt.supabase.co/functions/v1/get-gods-stats",
       {
@@ -23,6 +32,23 @@ export default class TheGodsDashboard extends DomNode {
       },
     );
     const data = await response.json();
-    console.log(data);
+
+    this.statsContent.clear().append(
+      el(
+        ".stat",
+        el(".value", String(data.total.num_owners)),
+        el(".label", "Total unique holders"),
+      ),
+      el(
+        ".stat",
+        el(
+          ".value",
+          String(data.total.floor_price),
+          " ",
+          data.total.floor_price_symbol,
+        ),
+        el(".label", "Floor price"),
+      ),
+    );
   }
 }
