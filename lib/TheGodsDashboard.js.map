@@ -1,0 +1,1 @@
+{"version":3,"file":"TheGodsDashboard.js","sourceRoot":"","sources":["../src/TheGodsDashboard.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,oBAAoB,CAAC;AAE7C,MAAM,CAAC,OAAO,OAAO,gBAAiB,SAAQ,OAAO;IACnD;QACE,KAAK,CAAC,qBAAqB,CAAC,CAAC;QAC7B,IAAI,CAAC,IAAI,GAAG,oBAAoB,CAAC;IACnC,CAAC;CACF"}
