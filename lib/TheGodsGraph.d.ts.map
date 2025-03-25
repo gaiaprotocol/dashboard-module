@@ -1,0 +1,1 @@
+{"version":3,"file":"TheGodsGraph.d.ts","sourceRoot":"","sources":["../src/TheGodsGraph.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,oBAAoB,CAAC;AAE7C,MAAM,CAAC,OAAO,OAAO,YAAa,SAAQ,OAAO;gBAE7C,MAAM,EAAE,KAAK,GAAG,IAAI,GAAG,KAAK,GAAG,KAAK,GAAG,KAAK,EAC5C,MAAM,EAAE,YAAY,GAAG,WAAW;CAIrC"}

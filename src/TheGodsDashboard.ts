@@ -1,11 +1,13 @@
 import { DomNode, el } from "@common-module/app";
+import TheGodsGraph from "./TheGodsGraph.js";
 
 export default class TheGodsDashboard extends DomNode {
   constructor() {
     super(".the-gods-dashboard");
     this.append(
-      el("h2", "Global Stats"),
-      el("h2", "Top God collectors"),
+      el("section", el("h2", "Global Stats")),
+      el("section", new TheGodsGraph("30d", "numOwners")),
+      el("section", el("h2", "Top God collectors")),
     );
     this.fetchCollectionStats();
   }
