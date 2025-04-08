@@ -13,7 +13,7 @@ export default class TheGodsDashboard extends DomNode {
     this.append(
       el(
         "section.stats",
-        el("h2", "Global Stats"),
+        el("h3", "Global Stats"),
         this.statsContent = el(".content"),
       ),
       el(
@@ -24,7 +24,7 @@ export default class TheGodsDashboard extends DomNode {
         ),
         this.graph = new TheGodsGraph("numOwners"),
       ),
-      el("section", el("h2", "Top God collectors")),
+      //el("section", el("h3", "Top God collectors")),
     );
 
     this.graphTabGroup.on(
